@@ -1,0 +1,17 @@
+{
+  "name": "putout",
+  "version": "1.0.0",
+  "description": "original site",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
