@@ -6,7 +6,6 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -36,7 +35,6 @@ public class ChatHistory extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
-        SlackApi api = new SlackApi();
         try {
             String channelID = "";
             if(request.getParameter("channelID") == null && session.getAttribute("channelID") == null) {
@@ -48,7 +46,7 @@ public class ChatHistory extends HttpServlet {
                 session.setAttribute("channelID", channelID);
             }
             
-            ArrayList<SlackData> arrayChat = api.getChannelHistory(channelID);
+            ArrayList<SlackData> arrayChat = SlackApi.getChannelHistory(channelID);
             session.setAttribute("arrayChat", arrayChat);
             request.getRequestDispatcher("/chathistory.jsp").forward(request, response);
         } catch(Exception e){

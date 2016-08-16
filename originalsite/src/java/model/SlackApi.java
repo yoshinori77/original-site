@@ -36,7 +36,7 @@ public class SlackApi {
         String result = "";
         JsonNode head = null;
         final String baseUrl = "https://slack.com/api/channels.history";
-        final String token = "xoxp-61076517457-61016290051-68014559056-4bd1230a6d";
+        final String token = "xoxp-61076517457-61016290051-69723723362-a9bd58d6d2";
         try{
             String channel = URLEncoder.encode(channelID, "utf-8");
             URL url = new URL(baseUrl + "?token=" + token + "&channel=" + channelID + "&oldest");
@@ -75,7 +75,7 @@ public class SlackApi {
         String result = "";
         JsonNode head = null;
         final String baseUrl = "https://slack.com/api/channels.list";
-        final String token = "xoxp-61076517457-61016290051-68014559056-4bd1230a6d";
+        final String token = "xoxp-61076517457-61016290051-69723723362-a9bd58d6d2";
         try{
             URL url = new URL(baseUrl + "?token=" + token);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -112,7 +112,7 @@ public class SlackApi {
         String result = "";
         JsonNode head = null;
         final String baseUrl = "https://slack.com/api/chat.meMessage";
-        final String token = "xoxp-61076517457-61016290051-68014559056-4bd1230a6d";
+        final String token = "xoxp-61076517457-61016290051-69723723362-a9bd58d6d2";
         try{
             URL url = new URL(baseUrl + "?token=" + token + "&channel=" + channelID + "&text=" + text);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -139,7 +139,7 @@ public class SlackApi {
     
     public static void channelCreate(String name){
         final String baseUrl = "https://slack.com/api/channels.create";
-        final String token = "xoxp-61076517457-61016290051-68014559056-4bd1230a6d";
+        final String token = "xoxp-61076517457-61016290051-69723723362-a9bd58d6d2";
         try{
             URL url = new URL(baseUrl + "?token=" + token + "&name=" + name);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -162,7 +162,7 @@ public class SlackApi {
         JsonNode head = null;
         BufferedReader in = null;
         final String baseUrl = "https://slack.com/api/users.info";
-        final String token = "xoxp-61076517457-61016290051-68014559056-4bd1230a6d";
+        final String token = "xoxp-61076517457-61016290051-69723723362-a9bd58d6d2";
         try{
             url = new URL(baseUrl + "?token=" + token + "&user=" + userID.replace("\"", ""));
             con = (HttpURLConnection) url.openConnection();

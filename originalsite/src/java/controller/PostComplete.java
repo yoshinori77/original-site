@@ -36,7 +36,7 @@ public class PostComplete extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
-        request.setCharacterEncoding("Shift_JIS");
+        request.setCharacterEncoding("utf-8");
         HttpSession session = request.getSession();
         SlackApi api = new SlackApi();
         try {
@@ -44,7 +44,7 @@ public class PostComplete extends HttpServlet {
             String channelID = (String)session.getAttribute("channelID");
             
             api.postMessage(channelID, text);
-            request.getRequestDispatcher("SearchChannel").forward(request, response);
+            request.getRequestDispatcher("Chat").forward(request, response);
         } catch(Exception e){
             request.setAttribute("error", e.getMessage());
             request.getRequestDispatcher("/error.jsp").forward(request, response);

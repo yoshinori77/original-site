@@ -26,7 +26,7 @@
     </div>
     <div class="collapse navbar-collapse target">
         <ul class="nav navbar-nav navbar-right" style="margin: 0 auto;">
-            <li><a href="SearchChannel">Search channel</a></li>
+            <li><a href="Chat">Search channel</a></li>
             <li><a href="CreateChannel">Create channel</a></li>
             <li><a href="">Log in</a></li>
             <li><a href="">Sign up</a></li>
