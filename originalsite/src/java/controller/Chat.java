@@ -47,7 +47,7 @@ public class Chat extends HttpServlet {
             ArrayList<SlackData> arrayChannel = api.getChannelList();
             session.setAttribute("arrayChannel", arrayChannel);
             
-            // 2. チャットの履歴を取得する
+//            2. チャットの履歴を取得する
             ChatUtil chat = new ChatUtil();
             ArrayList<String> channelPrm = chat.findChannelPrm(request, response);
             String channelID = channelPrm.get(0);

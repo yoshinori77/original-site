@@ -52,7 +52,7 @@
                     <div class="col-sm-2 hidden-xs bg-primary" style="text-align: center">
                         <div style="margin-top: 10px">
                             <% for(int i = 0; i < arrayChannel.size(); i++){ %>
-                                <form action="SearchChannel" method="GET">
+                                <form action="Chat" method="GET">
                                     <input type="hidden" name="channelID" value=<%= arrayChannel.get(i).getChannel()%>>
                                     <p><input type="submit" name="channelName" class="btn btn-primary btn-lg" style="outline: 0; border: 0" value=<%= arrayChannel.get(i).getText() %>></p>
                                 </form>
