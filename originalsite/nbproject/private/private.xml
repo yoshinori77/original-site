@@ -3,16 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/yoshi/Documents/NetBeansProjects/originalsite/web/footer.jsp</file>
-            <file>file:/C:/Users/yoshi/Documents/NetBeansProjects/originalsite/src/java/controller/ChatHistory.java</file>
-            <file>file:/C:/Users/yoshi/Documents/NetBeansProjects/originalsite/src/java/controller/PostComplete.java</file>
-            <file>file:/C:/Users/yoshi/Documents/NetBeansProjects/originalsite/src/java/controller/SearchChannel.java</file>
-            <file>file:/C:/Users/yoshi/Documents/NetBeansProjects/originalsite/web/index.jsp</file>
-            <file>file:/C:/Users/yoshi/Documents/NetBeansProjects/originalsite/web/footer_home.jsp</file>
-            <file>file:/C:/Users/yoshi/Documents/NetBeansProjects/originalsite/web/createchannel.jsp</file>
-            <file>file:/C:/Users/yoshi/Documents/NetBeansProjects/originalsite/web/searchchannel.jsp</file>
-            <file>file:/C:/Users/yoshi/Documents/NetBeansProjects/originalsite/web/css/index.css</file>
-            <file>file:/C:/Users/yoshi/Documents/NetBeansProjects/originalsite/web/header.jsp</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/model/SlackApi.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/Chat.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/MailSample.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/mail.jsp</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/Contact.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/mailsample.jsp</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/PostComplete.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/index.jsp</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/model/ChatUtil.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/chat.jsp</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/CreateChannel.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/contact.jsp</file>
         </group>
     </open-files>
 </project-private>

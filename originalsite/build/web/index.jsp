@@ -66,7 +66,7 @@
             <div class="container" style="margin-top: 5%">
                 <div class="row">
                     <div class="jumbotron col-md-4 col-sm-4 col-xs-4" style="display: inline-block; margin-left: 10%; padding: 10px 10px 10px 10px; border-radius: 10px">
-                        <a href="SearchChannel" style="text-decoration: none !important; color: black; font-size: 20px">
+                        <a href="Chat" style="text-decoration: none !important; color: black; font-size: 20px">
                             <img src="asset/newCar.jpg" style="display: block; margin: 0 auto; padding-bottom: 10px; border-radius: 15px">
                             <div>
                                 <div class="title" style="padding-bottom: 30px;">Super Car</div>
@@ -78,7 +78,7 @@
                         </a>
                     </div>
                     <div class="jumbotron col-md-4 col-sm-4 col-xs-4" style="display: inline-block; margin-left: 15%; padding: 10px 10px 10px 10px; border-radius: 10px">
-                        <a href="SearchChannel" style="text-decoration: none; color: black; font-size: 20px">
+                        <a href="Chat" style="text-decoration: none; color: black; font-size: 20px">
                             <img src="asset/newDrone.jpg" style="display: block; margin: 0 auto; padding-bottom: 10px; border-radius: 15px">
                             <div>
                                 <div class="title" style="padding-bottom: 30px;">Next Drone</div>
@@ -93,7 +93,7 @@
             </div>
         </div>
         
-        <%@ include file="footer.jsp" %>
+        <%@ include file="footer_home.jsp" %>
         
     </body>
 </html>

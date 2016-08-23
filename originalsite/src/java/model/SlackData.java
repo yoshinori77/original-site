@@ -64,4 +64,26 @@ public class SlackData {
     public void setTimeStamp(String timeStamp){
         this.timeStamp = timeStamp;
     }
+    
+    // UserDataBeansの各パラメータをDTOにセット
+//    public void SD2DTOMapping(UserDataDTO udd){
+//        udd.setChannelID(this.channelID);
+//        udd.setSlackUserID(this.userID);
+//        udd.setChat(this.text);
+//        udd.setImageUrl(this.imageUrl);
+//        udd.setTimeStamp(this.timeStamp);
+//        udd.setTotal(this.total);
+//        udd.setDeleteFlg(this.deleteFlg);
+//    }
+    
+    // DTOの各パラメータをUserDataBeansにセット
+//    public void DTO2SDMapping(UserDataDTO udd) {
+//        this.userid = udd.getUserID();
+//        this.name = udd.getName();
+//        this.password = udd.getPassword();
+//        this.mail = udd.getMail();
+//        this.address = udd.getAddress();
+//        this.total = udd.getTotal();
+//        this.deleteFlg = udd.getDeleteFlg();
+//    }
 }

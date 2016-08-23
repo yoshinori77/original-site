@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class mailsample_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -51,9 +51,14 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <title>JSP Page</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <form action=\"../ChannelList\" method=\"GET\">\n");
-      out.write("            <input type=\"text\" name=\"channelID\" value=\"\">\n");
-      out.write("            <input type=\"submit\" class=\"btn btn-info\" name=\"btnSubmit\" value=\"送信\">\n");
+      out.write("        <form action=\"MailSample\" method=\"POST\">\n");
+      out.write("            <label for=\"address\" >メールアドレス：</label>\n");
+      out.write("            <input type=\"text\" name=\"email\" placeholder=\"Email\">\n");
+      out.write("            <label for=\"address\" >件名：</label>\n");
+      out.write("            <input type=\"text\" name=\"subject\" placeholder=\"Subject\">\n");
+      out.write("            <label for=\"naiyou\" >お問い合わせ内容：</label>\n");
+      out.write("            <textarea name=\"message\" id=\"contentid\" rows=\"4\" cols=\"40\" placeholder=\"Message\"></textarea>\n");
+      out.write("            <input type=\"submit\" id=\"createMessageButton\" value=\"送信\">\n");
       out.write("        </form>\n");
       out.write("    </body>\n");
       out.write("</html>\n");

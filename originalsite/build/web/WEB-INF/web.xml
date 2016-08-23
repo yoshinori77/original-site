@@ -20,6 +20,22 @@
         <servlet-name>CreateChannelComplete</servlet-name>
         <servlet-class>controller.CreateChannelComplete</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Mail</servlet-name>
+        <servlet-class>controller.Mail</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Contact</servlet-name>
+        <servlet-class>controller.Contact</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ContactConfirm</servlet-name>
+        <servlet-class>controller.ContactConfirm</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MailSample</servlet-name>
+        <servlet-class>controller.MailSample</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Chat</servlet-name>
         <url-pattern>/Chat</url-pattern>
@@ -39,6 +55,22 @@
     <servlet-mapping>
         <servlet-name>CreateChannelComplete</servlet-name>
         <url-pattern>/CreateChannelComplete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Mail</servlet-name>
+        <url-pattern>/Mail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Contact</servlet-name>
+        <url-pattern>/Contact</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ContactConfirm</servlet-name>
+        <url-pattern>/ContactConfirm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MailSample</servlet-name>
+        <url-pattern>/MailSample</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

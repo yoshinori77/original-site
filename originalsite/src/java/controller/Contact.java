@@ -5,25 +5,17 @@
  */
 package controller;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 import java.io.IOException;
-import java.net.URLEncoder;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import model.SlackApi;
 
 /**
  *
  * @author yoshi
  */
-public class PostComplete extends HttpServlet {
+public class Contact extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,19 +29,9 @@ public class PostComplete extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("UTF-8");
-        HttpSession session = request.getSession();
-        SlackApi api = new SlackApi();
         try {
-            String message = request.getParameter("text");
-            String channelID = (String)session.getAttribute("channelID");
-            String encodeMessage = URLEncoder.encode(String.format("%s", message), "utf-8");
-                    
-            api.postMessage(channelID, encodeMessage);
-            request.getRequestDispatcher("Chat").forward(request, response);
-        } catch(Exception e){
-            request.setAttribute("error", e.getMessage());
-            request.getRequestDispatcher("/error.jsp").forward(request, response);
+            request.getRequestDispatcher("/contact.jsp").forward(request, response);
+        } finally {
         }
     }
 

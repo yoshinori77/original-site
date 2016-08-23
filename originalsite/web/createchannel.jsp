@@ -18,12 +18,12 @@
         <%@ include file="header.jsp" %>
         <div class="jumbotron" style="margin-top: 50px">
         <form action="CreateChannelComplete" method="GET">
-            <input type="text" name="name" value="">
+            <label for="createChannel" >新規スレッド名：</label>
+            <input type="text" name="name" value="" placeholder="new thread">
             <input type="submit" name="btnSubmit" value="送信">
         </form>
         
-        <%= ViewHelper.getInstance().top() %>
         </div>
-        <%@ include file="footer_home.jsp" %>
+        <%@ include file="footer.jsp" %>
     </body>
 </html>
