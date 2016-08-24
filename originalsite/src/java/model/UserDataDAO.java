@@ -37,11 +37,9 @@ public class UserDataDAO implements Serializable {
                 udd.setUserID(data.getInt("userID"));
                 udd.setName(data.getString("name"));
                 udd.setPassword(data.getString("password"));
-                udd.setMail(data.getString("mail"));
+                udd.setEmail(data.getString("email"));
                 udd.setAddress(data.getString("address"));
-                udd.setTotal(data.getInt("total"));
                 udd.setNewDate(data.getTimestamp("newDate"));
-                udd.setDeleteFlg(data.getInt("deleteFlg"));
             }
             return udd;
         } catch (Exception e) {
@@ -55,69 +53,22 @@ public class UserDataDAO implements Serializable {
         
     }
     
-//    public UserDataDTO LoginCheck(UserDataDTO udd) throws SQLException {
-//        Connection con = null;
-//        PreparedStatement st = null;
-//        try {
-//            con = DBManager.getConnection();
-//            
-//            String sql ="SELECT * FROM user_t WHERE name = ? AND password = ?";
-//            st = con.prepareStatement(sql);
-//
-//            st.setString(1, udd.getName());
-//            st.setString(2, udd.getPassword());
-//            ResultSet data = st.executeQuery();
-//            
-//            if (data.next()) {
-//                udd.setUserID(data.getInt("userID"));
-//                udd.setName(data.getString("name"));
-//                udd.setPassword(data.getString("password"));
-//                udd.setMail(data.getString("mail"));
-//                udd.setAddress(data.getString("address"));
-//                udd.setTotal(data.getInt("total"));
-//                udd.setNewDate(data.getDate("newDate"));
-//                udd.setDeleteFlg(data.getInt("deleteFlg"));
-//            }
-//            return udd;
-//            
-//        } catch (Exception e) {
-//            System.out.println(e.getMessage());
-//            throw new SQLException(e);
-//        } finally {
-//            if(con != null){
-//                try{
-//                    con.close();
-//                }catch(SQLException ignore){
-//                }
-//            }
-//            if(st != null){
-//                try{
-//                    st.close();
-//                }catch(SQLException ignore){
-//                }
-//            }
-//        }
-//    }
-    
-    
-    
-    
     /**
      * データの挿入処理を行う。現在時刻は挿入直前に生成
      * @param ud 対応したデータを保持しているJavaBeans
      * @throws SQLException 呼び出し元にcatchさせるためにスロー 
      */
-    public void insertUser(UserDataDTO udd) throws SQLException{
+    public void signUp(UserDataDTO udd) throws SQLException{
         Connection con = null;
         PreparedStatement st = null;
         try{
             con = DBManager.getConnection();
-            st =  con.prepareStatement("INSERT INTO user_t(name,password,mail,address,total,newDate) VALUES(?,?,?,?,?,?)");
+            st =  con.prepareStatement("INSERT INTO user_t(name,password,email,sex,address,newDate) VALUES(?,?,?,?,?,?)");
             st.setString(1, udd.getName());
             st.setString(2, udd.getPassword());
-            st.setString(3, udd.getMail());
-            st.setString(4, udd.getAddress());
-            st.setInt(5, udd.getTotal());
+            st.setString(3, udd.getEmail());
+            st.setInt(4, udd.getSex());
+            st.setString(5, udd.getAddress());
             st.setTimestamp(6, new Timestamp(System.currentTimeMillis()));
             st.executeUpdate();
             System.out.println("insert completed");
@@ -155,9 +106,8 @@ public class UserDataDAO implements Serializable {
             if(rs.next()){
                 resultUd.setName(rs.getString("name"));
                 resultUd.setPassword(rs.getString("password"));
-                resultUd.setMail(rs.getString("mail"));
+                resultUd.setEmail(rs.getString("email"));
                 resultUd.setAddress(rs.getString("address"));
-                resultUd.setTotal(rs.getInt("total"));
                 resultUd.setNewDate(rs.getTimestamp("newDate"));
             }
             con.close();

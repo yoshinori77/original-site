@@ -12,11 +12,14 @@ package controller;
  */
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import model.Access;
 import model.SlackApi;
 
 /**
@@ -35,9 +38,10 @@ public class PostComplete extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, Exception {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
+        Access.accessRootCheck(request, response);
         HttpSession session = request.getSession();
         SlackApi api = new SlackApi();
         try {
@@ -65,7 +69,11 @@ public class PostComplete extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (Exception ex) {
+            Logger.getLogger(PostComplete.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -79,7 +87,11 @@ public class PostComplete extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (Exception ex) {
+            Logger.getLogger(PostComplete.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

@@ -10,8 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import model.SlackApi;
+import model.Access;
 
 /**
  *
@@ -32,8 +31,8 @@ public class CreateChannel extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-        SlackApi api = new SlackApi();
         try {
+            Access.accessRootCheck(request, response);
             request.getRequestDispatcher("/createchannel.jsp").forward(request, response);
         } catch(Exception e){
             request.setAttribute("error", e.getMessage());

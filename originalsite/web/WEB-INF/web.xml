@@ -21,10 +21,6 @@
         <servlet-class>controller.CreateChannelComplete</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Mail</servlet-name>
-        <servlet-class>controller.Mail</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>Contact</servlet-name>
         <servlet-class>controller.Contact</servlet-class>
     </servlet>
@@ -33,8 +29,28 @@
         <servlet-class>controller.ContactConfirm</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>MailSample</servlet-name>
-        <servlet-class>controller.MailSample</servlet-class>
+        <servlet-name>Top</servlet-name>
+        <servlet-class>controller.Top</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>controller.Login</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginCheck</servlet-name>
+        <servlet-class>controller.LoginCheck</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Registration</servlet-name>
+        <servlet-class>controller.Registration</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegistrationConfirm</servlet-name>
+        <servlet-class>controller.RegistrationConfirm</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegistrationComplete</servlet-name>
+        <servlet-class>controller.RegistrationComplete</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Chat</servlet-name>
@@ -57,10 +73,6 @@
         <url-pattern>/CreateChannelComplete</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Mail</servlet-name>
-        <url-pattern>/Mail</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>Contact</servlet-name>
         <url-pattern>/Contact</url-pattern>
     </servlet-mapping>
@@ -69,8 +81,28 @@
         <url-pattern>/ContactConfirm</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>MailSample</servlet-name>
-        <url-pattern>/MailSample</url-pattern>
+        <servlet-name>Top</servlet-name>
+        <url-pattern>/Top</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginCheck</servlet-name>
+        <url-pattern>/LoginCheck</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Registration</servlet-name>
+        <url-pattern>/Registration</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegistrationConfirm</servlet-name>
+        <url-pattern>/RegistrationConfirm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegistrationComplete</servlet-name>
+        <url-pattern>/RegistrationComplete</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

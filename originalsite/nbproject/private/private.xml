@@ -5,13 +5,16 @@
         <group>
             <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/model/SlackApi.java</file>
             <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/Chat.java</file>
-            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/MailSample.java</file>
-            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/mail.jsp</file>
-            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/Contact.java</file>
-            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/mailsample.jsp</file>
-            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/PostComplete.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/header.jsp</file>
             <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/index.jsp</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/contactconfirm.jsp</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/ContactConfirm.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/PostComplete.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/Top.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/model/SlackData.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/model/UserData.java</file>
             <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/model/ChatUtil.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/model/ViewHelper.java</file>
             <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/chat.jsp</file>
             <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/CreateChannel.java</file>
             <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/contact.jsp</file>

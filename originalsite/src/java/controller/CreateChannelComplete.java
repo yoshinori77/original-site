@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Access;
 import model.SlackApi;
 
 /**
@@ -33,6 +34,7 @@ public class CreateChannelComplete extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         SlackApi api = new SlackApi();
         try {
+            Access.accessRootCheck(request, response);
             String name = request.getParameter("name");
             
             api.channelCreate(name);

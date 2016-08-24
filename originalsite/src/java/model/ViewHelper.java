@@ -21,5 +21,8 @@ public class ViewHelper {
         return "<a href=\""+ topURL + "\" class=\"btn btn-default\"><span class=\"glyphicon glyphicon-home\"></span> トップへ戻る</a>";
     }
     
+    public String pagination() {
+        return "<ul class=\"pagination\"><li class=\"disabled\"><a href=\"\">&laquo;</a></li><li class=\"active\"><a href=\"\">1</a></li><li><a href=\"\">2</a></li><li><a href=\"\">3</a></li><li><a href=\"\">&raquo;</a></li></ul>";
+    }
   
 }

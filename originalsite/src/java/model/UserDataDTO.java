@@ -15,20 +15,20 @@ import java.util.Date;
  * @author hayashi-s
  */
 public class UserDataDTO {
-    private int userid;
+    private int userID;
     private String name;
     private String password;
-    private String mail;
+    private String email;
+    private int sex;
     private String address;
-    private int total;
     private Date newDate;
     private int deleteFlg;
     
     public int getUserID() {
-        return userid;
+        return userID;
     }
-    public void setUserID(int userid) {
-        this.userid = userid;
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
     
     public String getName(){
@@ -45,25 +45,25 @@ public class UserDataDTO {
         this.password = password;
     }
     
-    public String getMail() {
-        return mail;
+    public String getEmail() {
+        return email;
     }
-    public void setMail(String mail) {
-        this.mail = mail;
-    } 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+    public int getSex() {
+        return sex;
+    }
+    public void setSex(int sex) {
+        this.sex = sex;
+    }
     
     public String getAddress(){
         return address;
     }
     public void setAddress(String address){
         this.address = address;
-    }
-    
-    public int getTotal(){
-        return total;
-    }
-    public void setTotal(int total){
-        this.total = total;
     }
     
     public Date getNewDate() {

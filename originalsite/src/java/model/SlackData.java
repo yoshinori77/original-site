@@ -18,6 +18,7 @@ package model;
 public class SlackData {
     private String channelID;
     private String userID;
+    private String name;
     private String text;
     private String imageUrl;
     private String timeStamp; 
@@ -25,6 +26,7 @@ public class SlackData {
     public SlackData(){
         channelID = "";
         userID = "";
+        name = "";
         text = "";
         imageUrl = "";
         timeStamp = "";
@@ -42,6 +44,13 @@ public class SlackData {
     }
     public void setUserID(String userID){
         this.userID = userID;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
     
     public String getText(){

@@ -11,11 +11,14 @@ package controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import model.Access;
 import model.ChatUtil;
 import model.SlackApi;
 import model.SlackData;
@@ -37,10 +40,12 @@ public class Chat extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, Exception {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
+        Access.accessRootCheck(request, response);
+        
         SlackApi api = new SlackApi();
         try {
 //            1. Slackのチャンネル一覧を取得する
@@ -62,11 +67,11 @@ public class Chat extends HttpServlet {
             for(int i=0; i < arrayChat.size(); i++) {
                 arrayUserID.add(arrayChat.get(i).getUserID());
             }
-            ArrayList<SlackData> arrayImageUrl = new ArrayList();
+            ArrayList<SlackData> arrayUserInfo = new ArrayList();
             for(int i = 0; i < arrayUserID.size(); i++) {
-                arrayImageUrl.add(api.getUserInfo(arrayUserID.get(i)));
+                arrayUserInfo.add(api.getUserInfo(arrayUserID.get(i)));
             }
-            session.setAttribute("arrayImageUrl", arrayImageUrl);
+            session.setAttribute("arrayUserInfo", arrayUserInfo);
             
             request.getRequestDispatcher("/chat.jsp").forward(request, response);
         } catch(Exception e){
@@ -87,7 +92,11 @@ public class Chat extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (Exception ex) {
+            Logger.getLogger(Chat.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -101,7 +110,11 @@ public class Chat extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (Exception ex) {
+            Logger.getLogger(Chat.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

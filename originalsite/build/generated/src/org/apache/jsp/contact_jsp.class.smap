@@ -5,6 +5,15 @@ JSP
 *F
 + 0 contact.jsp
 contact.jsp
++ 1 header.jsp
+header.jsp
++ 2 footer.jsp
+footer.jsp
 *L
-5,28:44
+5,15:51
+5#1:66,2
+6,32:68
+19#0,32:99
+5#2,20:131
+50#0,4:151
 *E

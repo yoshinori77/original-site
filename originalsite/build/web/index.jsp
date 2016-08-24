@@ -13,7 +13,7 @@
         <script src="js/bootstrap.min.js"></script>
         
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Welcome to Spring Web MVC project</title>
+        <title>Top Page</title>
     </head>
 
     <body> 

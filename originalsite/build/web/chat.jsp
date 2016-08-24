@@ -16,7 +16,7 @@
     ArrayList<SlackData> arrayChat = (ArrayList<SlackData>)session.getAttribute("arrayChat");
     String channelID = (String)session.getAttribute("channelID");
     String channelName = (String)session.getAttribute("channelName");
-    ArrayList<SlackData> arrayImageUrl = (ArrayList<SlackData>)session.getAttribute("arrayImageUrl");
+    ArrayList<SlackData> arrayUserInfo = (ArrayList<SlackData>)session.getAttribute("arrayUserInfo");
 %>
 <!DOCTYPE html>
 <html>
@@ -54,6 +54,7 @@
                             <% for(int i = 0; i < arrayChannel.size(); i++){ %>
                                 <form action="Chat" method="GET">
                                     <input type="hidden" name="channelID" value=<%= arrayChannel.get(i).getChannel()%>>
+                                    <input type="hidden" name="ac" value=<%= (Integer)session.getAttribute("ac")%>>
                                     <p><input type="submit" name="channelName" class="btn btn-primary btn-lg" style="outline: 0; border: 0" value=<%= arrayChannel.get(i).getText() %>></p>
                                 </form>
                             <% } %><br>
@@ -62,23 +63,18 @@
                 
                     <div class="col-sm-7 col-xs-10" style="margin-left: 20px">
                         <% for(int i = arrayChat.size() -1; i >= 0; i--){ %>
-                            <p><img src=<%=arrayImageUrl.get(i).getImageUrl()%>></p>
+                        <p><img src=<%=arrayUserInfo.get(i).getImageUrl()%>><%= arrayUserInfo.get(i).getName().replaceAll("\"", " ") %></p>
                             <p><%= arrayChat.get(i).getText().replaceAll("\"", "") %></p>
                         <% } %>
 
                         <form action="PostComplete" method="POST">
                             <input type="text" name="text" value="">
+                            <input type="hidden" name="ac" value=<%= (Integer)session.getAttribute("ac")%>>
                             <input type="submit" name="btnSubmit" value="送信">
                         </form>
 
                         <div>
-                            <ul class="pagination">
-                                <li class="disabled"><a href="">&laquo;</a></li>
-                                <li class="active"><a href="">1</a></li>
-                                <li><a href="">2</a></li>
-                                <li><a href="">3</a></li>
-                                <li><a href="">&raquo;</a></li>
-                            </ul>
+                            <%= ViewHelper.getInstance().pagination() %>
                         </div>
                     </div>
                 </div>
