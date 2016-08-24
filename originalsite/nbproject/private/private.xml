@@ -5,19 +5,38 @@
         <group>
             <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/model/SlackApi.java</file>
             <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/Chat.java</file>
-            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/header.jsp</file>
-            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/index.jsp</file>
-            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/contactconfirm.jsp</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/Contact.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/footer_home.jsp</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/login.jsp</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/RegistrationComplete.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/error.jsp</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/registrationconfirm.jsp</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/Login.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/Registration.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/RegistrationConfirm.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/base/DBManager.java</file>
             <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/ContactConfirm.java</file>
             <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/PostComplete.java</file>
-            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/Top.java</file>
             <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/model/SlackData.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/registration.jsp</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/model/UserDataDTO.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/CreateChannel.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/contact.jsp</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/LoginCheck.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/header.jsp</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/footer.jsp</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/index.jsp</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/model/UserDataDAO.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/model/Access.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/createchannel.jsp</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/CreateChannelComplete.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/contactconfirm.jsp</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/Top.java</file>
             <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/model/UserData.java</file>
             <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/model/ChatUtil.java</file>
             <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/model/ViewHelper.java</file>
+            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/registrationcomplete.jsp</file>
             <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/chat.jsp</file>
-            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/src/java/controller/CreateChannel.java</file>
-            <file>file:/C:/Users/yoshi/Desktop/Development/PutOut/originalsite/web/contact.jsp</file>
         </group>
     </open-files>
 </project-private>

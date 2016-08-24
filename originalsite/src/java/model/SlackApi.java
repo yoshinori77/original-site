@@ -36,9 +36,8 @@ public class SlackApi {
         String result = "";
         JsonNode head = null;
         final String baseUrl = "https://slack.com/api/channels.history";
-        final String token = "xoxp-61076517457-61016290051-69723723362-a9bd58d6d2";
+        final String token = ""; // slackのtoken
         try{
-            String channel = URLEncoder.encode(channelID, "utf-8");
             URL url = new URL(baseUrl + "?token=" + token + "&channel=" + channelID + "&oldest");
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
@@ -75,7 +74,7 @@ public class SlackApi {
         String result = "";
         JsonNode head = null;
         final String baseUrl = "https://slack.com/api/channels.list";
-        final String token = "xoxp-61076517457-61016290051-69723723362-a9bd58d6d2";
+        final String token = ""; //slackのtoken
         try{
             URL url = new URL(baseUrl + "?token=" + token);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -112,7 +111,7 @@ public class SlackApi {
         String result = "";
         JsonNode head = null;
         final String baseUrl = "https://slack.com/api/chat.meMessage";
-        final String token = "xoxp-61076517457-61016290051-69723723362-a9bd58d6d2";
+        final String token = ""; //slackのtoken
         try{
             URL url = new URL(baseUrl + "?token=" + token + "&channel=" + channelID + "&text=" + text);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -139,7 +138,7 @@ public class SlackApi {
     
     public static void channelCreate(String name){
         final String baseUrl = "https://slack.com/api/channels.create";
-        final String token = "xoxp-61076517457-61016290051-69723723362-a9bd58d6d2";
+        final String token = ""; //slackのtoken
         try{
             URL url = new URL(baseUrl + "?token=" + token + "&name=" + name);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -162,7 +161,7 @@ public class SlackApi {
         JsonNode head = null;
         BufferedReader in = null;
         final String baseUrl = "https://slack.com/api/users.info";
-        final String token = "xoxp-61076517457-61016290051-69723723362-a9bd58d6d2";
+        final String token = ""; //slackのtoken
         try{
             url = new URL(baseUrl + "?token=" + token + "&user=" + userID.replace("\"", ""));
             con = (HttpURLConnection) url.openConnection();
@@ -179,6 +178,7 @@ public class SlackApi {
             ObjectMapper mapper = new ObjectMapper();
             head = mapper.readTree(parser);
             sd.setImageUrl(head.get("user").get("profile").get("image_32").toString());
+            sd.setName(head.get("user").get("name").toString());
 
             in.close();
             con.disconnect();
