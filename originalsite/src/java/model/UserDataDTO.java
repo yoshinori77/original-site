@@ -5,7 +5,7 @@
  */
 package model;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -21,6 +21,7 @@ public class UserDataDTO {
     private String email;
     private int sex;
     private String address;
+    private LocalDateTime birthday;
     private Date newDate;
     private int deleteFlg;
     
@@ -64,6 +65,13 @@ public class UserDataDTO {
     }
     public void setAddress(String address){
         this.address = address;
+    }
+    
+    public LocalDateTime getBirthday(){
+        return birthday;
+    }
+    public void setBirthday(LocalDateTime birthday){
+        this.birthday = birthday;
     }
     
     public Date getNewDate() {

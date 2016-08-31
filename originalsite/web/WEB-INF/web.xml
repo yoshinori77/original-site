@@ -52,6 +52,18 @@
         <servlet-name>RegistrationComplete</servlet-name>
         <servlet-class>controller.RegistrationComplete</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>controller.Logout</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Project</servlet-name>
+        <servlet-class>controller.Project</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProjectSchedule</servlet-name>
+        <servlet-class>controller.ProjectSchedule</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Chat</servlet-name>
         <url-pattern>/Chat</url-pattern>
@@ -103,6 +115,18 @@
     <servlet-mapping>
         <servlet-name>RegistrationComplete</servlet-name>
         <url-pattern>/RegistrationComplete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Project</servlet-name>
+        <url-pattern>/Project</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProjectSchedule</servlet-name>
+        <url-pattern>/ProjectSchedule</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

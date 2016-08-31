@@ -3,10 +3,14 @@
     Created on : 2016/08/08, 10:24:51
     Author     : yoshi
 --%>
-<%--<%@page import="jums.UserData"%>--%>
 <%@page import="javax.servlet.http.HttpSession"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<%  
+    Boolean loginFlg = false;
+    if(session.getAttribute("loginFlg") != null) {
+        loginFlg = (Boolean)session.getAttribute("loginFlg");
+    }
+%>
 <nav class="navbar navbar-default navbar-fixed-top" style="margin: 0 auto;">
     <div class="navbar-header">
         <button class="navbar-toggle" data-toggle="collapse" data-target=".target">
@@ -30,12 +34,23 @@
                     <input type="hidden" name="ac" value=<%= (Integer)session.getAttribute("ac")%>>
                 </form>
             </li>
-            <li><a href="" onclick="document.login.submit();return false;">Log in</a>
+            <% if(loginFlg) { %>
+            <li>
+                <a data-toggle="modal" href="" onclick="document.logout.submit();return false;">Log out</a>
+                <form name="logout" method="POST" action="Logout">
+                    <input type="hidden" name="ac" value=<%= (Integer)session.getAttribute("ac")%>>
+                </form>
+            </li>
+            <% } else if(!loginFlg) { %>
+            <li>
+                <a data-toggle="modal" href="#login" onclick="document.login.submit();return false;">Log in</a>
                 <form name="login" method="POST" action="Login">
                     <input type="hidden" name="ac" value=<%= (Integer)session.getAttribute("ac")%>>
                 </form>
             </li>
-            <li><a href="" onclick="document.signup.submit();return false;">Sign up</a>
+            <% } %>
+            <li>
+                <a href="" onclick="document.signup.submit();return false;">Sign up</a>
                 <form name="signup" method="POST" action="Registration">
                     <input type="hidden" name="ac" value=<%= (Integer)session.getAttribute("ac")%>>
                 </form>

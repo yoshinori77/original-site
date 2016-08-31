@@ -24,10 +24,14 @@
              <form action="LoginCheck" method="POST">
                 <%if (request.getAttribute("error") != null){out.println(request.getAttribute("error"));}%><br><br>
                 <h3>名前：</h3><input type="text" name="name" size="60" style="border: 1px solid; padding: 3px;"> <br><br>
-                <h3>PASSWORD：</h3><input type="text" name="password" size="60" style="border: 1px solid; padding: 3px;"> <br><br> 
+                <h3>PASSWORD：</h3><input type="text" name="password" size="60" style="border: 1px solid; padding: 3px;"> <br><br>
+                <input type="hidden" name="ac" value=<%= (Integer)session.getAttribute("ac")%>>
                 <input type="submit" class="btn btn-info" name="btnSubmit" value="ログイン"  ><br><br>
-                <button type="button" class="btn btn-primary"><a href="Registration" style="text-decoration: none; color: white">新規登録</a></button>
              </form>
+            <button type="button" class="btn btn-primary"><a href="" onclick="document.registration.submit();return false;" style="text-decoration: none; color: white">新規登録</a></button>
+            <form name="registration" method="POST" action="Registration">
+                <input type="hidden" name="ac" value=<%= (Integer)session.getAttribute("ac")%>>
+            </form>
             </div>
         </div>
          <%@ include file="footer.jsp" %>

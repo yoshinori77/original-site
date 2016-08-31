@@ -6,7 +6,6 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -50,11 +49,14 @@ public class LoginCheck extends HttpServlet {
             Access.accessRootCheck(request, response);
             
             UserDataDTO userdata = UserDataDAO.getInstance().LoginCheck(udd);
-            ud.DTO2UDMapping(udd);
+            ud.DTO2UDMapping(userdata);
             
             if (ud.getUserID() > 0) {
                 session.setAttribute("userdata", ud);
-                request.getRequestDispatcher(response.encodeURL(session.getAttribute("referer").toString().substring(34))).forward(request, response);
+                session.setAttribute("loginFlg", true);
+                request.setAttribute("loginDialogFlg", true);
+                String preUrl = session.getAttribute("referer").toString().substring(34);
+                request.getRequestDispatcher(preUrl).forward(request, response);
             } else {
                 request.setAttribute("error", "名前かパスワードが違います");
                 request.getRequestDispatcher("/login.jsp").forward(request, response);

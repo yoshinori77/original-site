@@ -6,6 +6,8 @@
 package controller;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -39,6 +41,12 @@ public class RegistrationConfirm extends HttpServlet {
             String email = request.getParameter("email");
             int sex = Integer.parseInt(request.getParameter("sex"));
             String address = request.getParameter("address");
+            int year = Integer.parseInt(request.getParameter("year"));
+            int month = Integer.parseInt(request.getParameter("month"));
+            int day = Integer.parseInt(request.getParameter("day"));
+            // LocalDateTimeはJava8の日時API
+            // truncatedToで切り捨て
+            LocalDateTime birthday = LocalDateTime.of(year, month, day, 0, 0).truncatedTo(ChronoUnit.DAYS);
             
             // フォームからの各パラメータを取得して、JavaBeansに格納
             UserData ud = new UserData();
@@ -46,14 +54,10 @@ public class RegistrationConfirm extends HttpServlet {
             ud.setPassword(password);
             ud.setEmail(email);
             ud.setSex(sex);
+            ud.setSSex(sex);
             ud.setAddress(address);
-            
-//            ArrayList alData = new ArrayList();
-//            alData.add(name);
-//            alData.add(password);
-//            alData.add(mail);
-//            alData.add(address);
-//            session.setAttribute("adData", alData);
+            ud.setBirthday(birthday);
+            ud.setSBirthday(birthday);
             
             //ユーザーデータをセッションに格納
             session.setAttribute("ud", ud);

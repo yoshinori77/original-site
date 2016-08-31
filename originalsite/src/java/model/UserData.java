@@ -5,6 +5,12 @@
  */
 package model;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+
 /**
  *
  * @author yoshi
@@ -15,7 +21,10 @@ public class UserData {
     private String password;
     private String email;
     private int sex;
+    private String ssex;
     private String address;
+    private LocalDateTime birthday;
+    private String sbirthday;
     private String category;
     private String subject;
     private String message;
@@ -26,6 +35,7 @@ public class UserData {
         password = "";
         email = "";
         sex = 0;
+        ssex = "";
         address = "";
         category = "";
         subject = "";
@@ -67,11 +77,39 @@ public class UserData {
         this.sex = sex;
     }
     
+    public String getSSex() {
+        return ssex;
+    }
+    public void setSSex(int sex) {
+        if(sex == 1) {
+            this.ssex = "男性";
+        } else if(sex == 2) {
+            this.ssex = "女性";
+        }
+    }
+    
     public String getAddress() {
         return address;
     }
     public void setAddress(String address) {
         this.address = address;
+    }
+    
+    public LocalDateTime getBirthday() {
+        return birthday;
+    }
+    public void setBirthday(LocalDateTime birthday) {
+        this.birthday = birthday;
+    }
+    
+    public String getSBirthday() {
+        return sbirthday;
+    }
+    public void setSBirthday(LocalDateTime birthday) {
+        LocalDate lbirthday = birthday.toLocalDate();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        this.sbirthday = lbirthday.format(formatter);
+        this.sbirthday = sbirthday;
     }
     
     public String getCategory() {
@@ -103,6 +141,7 @@ public class UserData {
         udd.setEmail(this.email);
         udd.setSex(this.sex);
         udd.setAddress(this.address);
+        udd.setBirthday(this.birthday);
     }
     
     // DTOの各パラメータをUserDataBeansにセット

@@ -35,7 +35,6 @@ public class Login extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
         try {
-            Access.accessRootCheck(request, response);
             session.setAttribute("referer", request.getHeader("REFERER"));
             request.getRequestDispatcher("/login.jsp").forward(request, response);
         } catch(NullPointerException e) {

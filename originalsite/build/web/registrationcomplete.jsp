@@ -1,3 +1,5 @@
+<%@page import="java.time.LocalDate"%>
+<%@page import="java.time.temporal.ChronoUnit"%>
 <%@page import="model.UserData"%>
 <%@page import="model.ViewHelper"%>
 
@@ -15,13 +17,18 @@
     </head>
     <body>
         <%@ include file="header.jsp"%>
-        <h1>登録結果</h1><br>
-        名前: <%= ud.getName()%><br>
-        パスワード: <%= ud.getPassword()%><br>
-        メールアドレス: <%= ud.getEmail()%><br>
-        住所: <%= ud.getAddress()%><br>
-        以上の内容で登録しました。<br>
-        
+        <div class="jumbotron">
+            <div class="container">
+            <h2>登録結果</h2><br>
+            名前: <%= ud.getName()%><br>
+            パスワード: <%= ud.getPassword()%><br>
+            メールアドレス: <%= ud.getEmail()%><br>
+            住所: <%= ud.getAddress()%><br>
+            生年月日: <%= ud.getSBirthday() %><br>
+            性別: <%= ud.getSSex() %><br>
+            以上の内容で登録しました。<br>
+            </div>
+        </div>
         <%@ include file="footer.jsp"%>
     </body>
 </html>

@@ -44,8 +44,8 @@ public class ContactConfirm extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         Access.accessRootCheck(request, response);
-        final String address = ""; // 認可されているgmailアドレス
-        final String password = ""; // googleアカウントのパスワード
+        final String address = "yoshinoriyamashita123@gmail.com";
+        final String password = "Yy19910612";
         final String host = "smtp.gmail.com";
         final String port = "587";
         final String starttls = "true";
@@ -72,7 +72,7 @@ public class ContactConfirm extends HttpServlet {
         // props.put("mail.host", "smtp.gmail.com");
         // 宛先の作成
         String[] to = new String[1];
-        to[0] = ""; // 宛先のgmailアドレス
+        to[0] = "yoshinoriyamashita123@gmail.com";
         InternetAddress[] toAddress = new InternetAddress[to.length];
         try {
             for (int i = 0; i < to.length; i++) {

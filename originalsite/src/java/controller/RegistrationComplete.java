@@ -7,6 +7,8 @@ package controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -49,7 +51,7 @@ public class RegistrationComplete extends HttpServlet {
             ud.UD2DTOMapping(udd);
             
             //DBへデータの挿入
-            UserDataDAO .getInstance().signUp(udd);
+            UserDataDAO.getInstance().signUp(udd);
             
             //成功したのでセッションの値を削除
             session.invalidate();

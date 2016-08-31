@@ -35,7 +35,7 @@
                     <label for="">パスワード：</label>
                 </div>
                 <div class="col-sm-10">
-                    <input type="text" name="password" placeholder="password" style="width: 300px; margin-bottom: 10px" value="<% if(reinput){out.print(ud.getPassword());}%>">
+                    <input type="password" name="password" placeholder="password" style="width: 300px; margin-bottom: 10px" value="<% if(reinput){out.print(ud.getPassword());}%>">
                 </div>
                 <div class="col-sm-2">
                     <label for="">メールアドレス：</label>
@@ -50,11 +50,17 @@
                     <input type="text" name="address" placeholder="address" style="width: 300px; margin-bottom: 10px" value="<% if(reinput){out.print(ud.getAddress());}%>">
                 </div>
                 <div class="col-sm-2">
+                    <label for="">生年月日：</label>
+                </div>
+                <div class="col-md-10" style="margin-bottom: 10px">
+                <%@ include file="birthday.jsp" %>
+                </div>
+                <div class="col-sm-2">
                     <label for="">性別：</label>
                 </div>
                 <div class="col-sm-10">
                     <input type="radio" name="sex" value="1" checked="<% if(reinput){if(ud.getSex() == 1){out.print("checked");}}%>">男性
-                    <input type="radio" name="sex" value="2">女性
+                    <input type="radio" name="sex" value="2" checked="<% if(reinput){if(ud.getSex() == 2){out.print("checked");}}%>">女性
                 </div>
                 <div class="col-sm-2">
                     <input type="hidden" name="ac"  value="<%= hs.getAttribute("ac")%>">

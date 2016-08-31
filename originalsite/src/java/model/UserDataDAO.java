@@ -12,8 +12,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 
 public class UserDataDAO implements Serializable {
     
@@ -28,7 +26,7 @@ public class UserDataDAO implements Serializable {
         ResultSet data = null;
         con = DBManager.getConnection();
         try {
-            st = con.prepareStatement("select *from user_t where name = ? and password = ? ;");
+            st = con.prepareStatement("select * from user_t where name = ? and password = ?;");
 
             st.setString(1, udd.getName());
             st.setString(2, udd.getPassword());
@@ -63,13 +61,14 @@ public class UserDataDAO implements Serializable {
         PreparedStatement st = null;
         try{
             con = DBManager.getConnection();
-            st =  con.prepareStatement("INSERT INTO user_t(name,password,email,sex,address,newDate) VALUES(?,?,?,?,?,?)");
+            st =  con.prepareStatement("INSERT INTO user_t(name,password,email,sex,address,birthday,newDate) VALUES(?,?,?,?,?,?,?)");
             st.setString(1, udd.getName());
             st.setString(2, udd.getPassword());
             st.setString(3, udd.getEmail());
             st.setInt(4, udd.getSex());
             st.setString(5, udd.getAddress());
-            st.setTimestamp(6, new Timestamp(System.currentTimeMillis()));
+            st.setTimestamp(6, Timestamp.valueOf(udd.getBirthday()));
+            st.setTimestamp(7, new Timestamp(System.currentTimeMillis()));
             st.executeUpdate();
             System.out.println("insert completed");
         }catch(SQLException e){

@@ -1,6 +1,6 @@
+<%@page import="model.Access"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
@@ -8,16 +8,28 @@
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
         <link href="http://getbootstrap.com/examples/sticky-footer/sticky-footer.css" rel="stylesheet">
-        
+        <link type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
         <script src="http://code.jquery.com/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>*1
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
         
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Top Page</title>
     </head>
-
     <body> 
-        <div class="container"><%@ include file="header.jsp" %></div><br>
+        <script type="text/javascript">
+            var loginDialogFlg = <%=request.getAttribute("loginDialogFlg") %>;
+            var logoutDialogFlg = <%=request.getAttribute("logoutDialogFlg") %>;
+            if(loginDialogFlg) {
+                logoutDialogFlg = false;
+            }
+            
+            console.log(loginDialogFlg + "login");
+            console.log(logoutDialogFlg + "logout");
+            
+        </script>
+        <jsp:include page="header.jsp" flush="true"/>
         
         <div id="wrap">
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="7000">
@@ -66,7 +78,7 @@
             <div class="container" style="margin-top: 5%">
                 <div class="row">
                     <div class="jumbotron col-md-4 col-sm-4 col-xs-4" style="display: inline-block; margin-left: 10%; padding: 10px 10px 10px 10px; border-radius: 10px">
-                        <a href="Chat" style="text-decoration: none !important; color: black; font-size: 20px">
+                        <a href="Project" style="text-decoration: none !important; color: black; font-size: 20px">
                             <img src="asset/newCar.jpg" style="display: block; margin: 0 auto; padding-bottom: 10px; border-radius: 15px">
                             <div>
                                 <div class="title" style="padding-bottom: 30px;">Super Car</div>
@@ -78,7 +90,7 @@
                         </a>
                     </div>
                     <div class="jumbotron col-md-4 col-sm-4 col-xs-4" style="display: inline-block; margin-left: 15%; padding: 10px 10px 10px 10px; border-radius: 10px">
-                        <a href="Chat" style="text-decoration: none; color: black; font-size: 20px">
+                        <a href="Project" style="text-decoration: none; color: black; font-size: 20px">
                             <img src="asset/newDrone.jpg" style="display: block; margin: 0 auto; padding-bottom: 10px; border-radius: 15px">
                             <div>
                                 <div class="title" style="padding-bottom: 30px;">Next Drone</div>
@@ -93,6 +105,12 @@
             </div>
         </div>
         
+        <div style="padding-bottom: 100px"></div>
+        
+        <!--モーダルダイアログ-->
+        <%@ include file="loginDialog.jsp" %>
+        <%@ include file="logoutDialog.jsp" %>
+        <!--footer-->
         <%@ include file="footer_home.jsp" %>
         
     </body>
